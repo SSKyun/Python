@@ -1,0 +1,3 @@
+Pythonについて
+
+paizaを使ってpythonで問題を解いています。
