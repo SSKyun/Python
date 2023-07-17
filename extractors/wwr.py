@@ -1,7 +1,7 @@
 from requests import get
 from bs4 import BeautifulSoup
 
-def extracts_job(keyword):
+def extracts_wwr_job(keyword):
     base_url = "https://weworkremotely.com/remote-jobs/search?utf8=%E2%9C%93&term="
     response = get(f"{base_url}{keyword}")
     if response.status_code != 200:

@@ -1,20 +1,13 @@
-#websites = (
-#     "google.com",
-#     "nate.com",
-#     "https://naver.com",
-#     "nate.com",
-#     "https://daum.net"
-# )
+from requests import get
+from bs4 import BeautifulSoup
+from extractors.wwr import extracts_wwr_job
 
-# result = {}
+base_url = "https://kr.indeed.com/jobs?q=python"
+search_term = "python"
+print(base_url)
+response = get(f"{base_url}")
 
-# for website in websites:
-#     if not website.startswith("https://"):
-#         website = f"https://{website}"
-#     response = get(website)
-#     if response.status_code == 200:
-#         result[website] = "OK"
-#     else:
-#         result[website] = "FAILED"
-
-# print(result)
+if response.status_code != 200:
+    print("Can't response")
+else:
+    print(response.text)
